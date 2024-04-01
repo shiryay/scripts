@@ -94,7 +94,15 @@ Search(engine) {
 
 !z::
 	provider := "MultitranLocal"
-	Search(provider)
+	try
+	{
+		Search(provider)
+	}
+	catch
+	{
+		MsgBox "Dictionary not found"
+		Exit
+	}
 	return
 
 !c::

@@ -13,3 +13,12 @@ SetWorkingDir, %A_ScriptDir%
 	Send, {Enter}
 	Send, ^v
 	return
+
+; Downloading selected youtube link with savefrom web interface
+^!y::
+	Send ^c
+	Sleep 150
+	url := StrReplace(clipboard, "youtube", "ssyoutube")
+	Run, %url%
+	return
+

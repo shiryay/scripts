@@ -9,6 +9,8 @@ SetWorkingDir, %A_ScriptDir%
 	SetTitleMatchMode, 2
 	WinActivate, - Vault -
 	Sleep, 150
+	Send, ^+d
+	Sleep, 150
 	Send, ^{End}
 	Send, {Enter}
 	Send, ^v

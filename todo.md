@@ -1,6 +1,6 @@
 TODO: Convert vba code below into ahk
 
-```
+```vba
 Sub KillHiddenText()
 '
 '   Removes hidden text from active document
@@ -93,4 +93,17 @@ Sub ConvertDates()
     SaveReport ("ChangeReport.docx")
 
 End Sub
+```
+
+ahk code to use
+
+```ahk
+#SingleInstance,Force
+doc:=ComObjActive("Word.Application") ;this would activate an open one
+doc.Application.ScreenUpdating := False
+doc.Options.CheckSpellingAsYouType:=True
+doc.Options.CheckGrammarAsYouType :=True
+doc.ActiveDocument.ShowSpellingErrors := False
+doc.ActiveDocument.ShowGrammaticalErrors := False
+doc.Application.ScreenUpdating := True ;Update the screen
 ```

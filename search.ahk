@@ -26,7 +26,6 @@ Search(engine) {
 	Send "^c"
 	ClipWait
 	url := StrReplace(url, "@@@", A_Clipboard)
-	MsgBox(url)
 	Run url
 }
 

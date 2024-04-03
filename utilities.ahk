@@ -8,6 +8,7 @@ OpenObsidian() {
 		WinActivate
 	else
 		Run "C:\Users\anon\AppData\Local\Programs\obsidian\Obsidian.exe"
+		Sleep 3000
 		WinActivate("- Vault -")
 	Sleep 150
 	Send "^+d"

@@ -2,6 +2,21 @@
 SendMode "Input"
 SetWorkingDir A_ScriptDir
 
+OpenObsidian() {
+	SetTitleMatchMode 2
+	If WinExist("- Vault -")
+		WinActivate
+	else
+		Run "C:\Users\anon\AppData\Local\Programs\obsidian\Obsidian.exe"
+		WinActivate("- Vault -")
+	Sleep 150
+	Send "^+d"
+	Sleep 150
+	Send "^{End}"
+	Send "{Enter}"
+	return
+}
+
 ; Downloading selected youtube link with savefrom web interface
 ; TODO: think about automating further with pressing download and saving file
 ^!y:: {
@@ -42,18 +57,14 @@ SetWorkingDir A_ScriptDir
 	
 ; Sending selected text to an opened Obsidian vault
 !o:: {
+	A_Clipboard := ""
 	Send "^c"
-	SetTitleMatchMode 2
-	If WinExist("- Vault -")
-		WinActivate
-	else
-		Run "C:\Users\anon\AppData\Local\Programs\obsidian\Obsidian.exe"
-		WinActivate("- Vault -")
-	Sleep 150
-	Send "^+d"
-	Sleep 150
-	Send "^{End}"
-	Send "{Enter}"
+	ClipWait
+	OpenObsidian
 	Send "^v"
 	return
+}
+
+#o:: {
+	OpenObsidian
 }

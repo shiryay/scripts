@@ -1,111 +1,146 @@
-﻿#NoEnv
-#SingleInstance, Force
-SendMode Input
-SetWorkingDir, %A_ScriptDir%
+﻿#SingleInstance Force
+SendMode "Input"
+SetWorkingDir A_ScriptDir
 
 Search(engine) {
-	urls := {"Google" : "https://www.google.ru/search?q=`%22{query}`%22", "GoogleBooks" : "https://www.google.com/search?tbm=bks&q=`%22{query}`%22", "GoogleTr" : "https://translate.google.ru/?sl=auto&tl=en&text={query}&op=translate&hl=en", "LingueeDeEn" : "https://www.linguee.de/deutsch-englisch/search?source=auto&query=`%22{query}`%22", "LingueeRuEn" : "https://www.linguee.ru/russian-english/search?source=auto&query={query}", "LingueeEsEn" : "https://www.linguee.com/english-spanish/search?source=spanish&query={query}", "LingueeFrEn" : "https://www.linguee.fr/francais-anglais/search?source=auto&query={query}", "Proz" : "https://www.google.ru/search?q=`%22{query}`%22+english+proz", "Insur" : "https://www.insur-info.ru/dictionary/search/?q={query}&btnFind=`%C8`%F1`%EA`%E0`%F2`%FC`%21&q_far", "MultitranWeb" : "https://www.multitran.com/c/m.exe?CL=1&s={query}&l1=1&l2=2", "MultitranLocal" : "d:\mt\network\multitran.exe", "Abkuerzungen" : "http://abkuerzungen.de/result.php?searchterm={query}&language=de", "Acronymfinder" : "https://www.acronymfinder.com/{query}.html", "Webster" : "https://www.merriam-webster.com/dictionary/{query}", "Wox" : "https://abkuerzungen.woxikon.de/abkuerzung/{query}.php", "Sokr" : "http://sokr.ru/{query}/", "Yandex" : "https://yandex.ru/search/?text=`%22{query}`%22", "CollinsEs" : "https://www.collinsdictionary.com/dictionary/spanish-english/{query}"}
+	urls := Map()
+	urls["Google"]:= "https://www.google.ru/search?q=`%22@@@`%22"
+	urls["GoogleBooks"] := "https://www.google.com/search?tbm=bks&q=`%22@@@`%22"
+	urls["GoogleTr"] := "https://translate.google.ru/?sl=auto&tl=en&text=@@@&op=translate&hl=en"
+	urls["LingueeDeEn"] := "https://www.linguee.de/deutsch-englisch/search?source=auto&query=`%22@@@`%22"
+	urls["LingueeRuEn"] := "https://www.linguee.ru/russian-english/search?source=auto&query=@@@"
+	urls["LingueeEsEn"] := "https://www.linguee.com/english-spanish/search?source=spanish&query=@@@"
+	urls["LingueeFrEn"] := "https://www.linguee.fr/francais-anglais/search?source=auto&query=@@@"
+	urls["Proz"] := "https://www.google.ru/search?q=`%22@@@`%22+english+proz"
+	urls["Insur"] := "https://www.insur-info.ru/dictionary/search/?q=@@@&btnFind=`%C8`%F1`%EA`%E0`%F2`%FC`%21&q_far"
+	urls["MultitranWeb"] := "https://www.multitran.com/c/m.exe?CL=1&s=@@@&l1=1&l2=2"
+	urls["Abkuerzungen"] := "http://abkuerzungen.de/result.php?searchterm=@@@&language=de"
+	urls["Acronymfinder"] := "https://www.acronymfinder.com/@@@.html"
+	urls["Webster"] := "https://www.merriam-webster.com/dictionary/@@@"
+	urls["Wox"] := "https://abkuerzungen.woxikon.de/abkuerzung/@@@.php"
+	urls["Sokr"] := "http://sokr.ru/@@@/"
+	urls["Yandex"] := "https://yandex.ru/search/?text=`%22@@@`%22"
+	urls["CollinsEs"] := "https://www.collinsdictionary.com/dictionary/spanish-english/@@@"
 	url := urls[engine]
-	send,^c
-	sleep 150
-	url := StrReplace(url, "{query}", clipboard)
-	Run, %url%
+	A_Clipboard := ""
+	Send "^c"
+	ClipWait
+	url := StrReplace(url, "@@@", A_Clipboard)
+	MsgBox(url)
+	Run url
 }
 
-!g::
+!g:: {
 	provider := "Google"
 	Search(provider)
 	return
+}
 
-!b::
+!b:: {
 	provider := "GoogleBooks"
 	Search(provider)
 	return
+}
 
-!t::
+!t:: {
 	provider := "GoogleTr"
 	Search(provider)
 	return
+}
 
-!d::
+!d:: {
 	provider := "LingueeDeEn"
 	Search(provider)
 	return
+}
 
-!r::
+!r:: {
 	provider := "LingueeRuEn"
 	Search(provider)
 	return
+}
 
-!s::
+!s:: {
 	provider := "LingueeEsEn"
 	Search(provider)
 	return
+}
 
-!f::
+!f:: {
 	provider := "LingueeFrEn"
 	Search(provider)
 	return
+}
 
-!p::
+!p:: {
 	provider := "Proz"
 	Search(provider)
 	return
+}
 
-!i::
+!i:: {
 	provider := "Insur"
 	Search(provider)
 	return
+}
 
-!m::
+!m:: {
 	provider := "MultitranWeb"
 	Search(provider)
 	return
+}
 
-!a::
+!a:: {
 	provider := "Acronymfinder"
 	Search(provider)
 	return
+}
 
-!k::
+!k:: {
 	provider := "Sokr"
 	Search(provider)
 	return
+}
 
-!u::
+!u:: {
 	provider := "Abkuerzungen"
 	Search(provider)
 	return
+}
 
-!w::
+!w:: {
 	provider := "Webster"
 	Search(provider)
 	return
+}
 
-!x::
+!x:: {
 	provider := "Wox"
 	Search(provider)
 	return
+}
 
-!y::
+!y:: {
 	provider := "Yandex"
 	Search(provider)
 	return
+}
 
-!z::
-	provider := "MultitranLocal"
-	try
-	{
-		Search(provider)
-	}
-	catch
-	{
-		MsgBox "Dictionary not found"
-		Exit
-	}
+!z:: {
+	A_Clipboard := ""
+	Send "^c"
+	ClipWait
+	SetTitleMatchMode 2
+	If WinExist("MultiTran")
+		WinActivate
+	else
+		Run "d:\mt\network\multitran.exe"
+		WinActivate("MultiTran")
 	return
+}
 
-!c::
+!c:: {
 	provider := "CollinsEs"
 	Search(provider)
 	return
+}

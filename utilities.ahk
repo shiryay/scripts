@@ -19,6 +19,7 @@ OpenObsidian() {
 }
 
 CopyTextToObsidian() {
+	A_Clipboard := ""
 	Send "^c"
 	ClipWait
 	OpenObsidian

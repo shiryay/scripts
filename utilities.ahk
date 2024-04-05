@@ -65,3 +65,21 @@ CopyTextToObsidian() {
 #o:: {
 	OpenObsidian
 }
+
+; Temporary function for searching a reference document
+^7:: {
+	A_Clipboard := ""
+	Send "^c"
+	ClipWait
+	SetTitleMatchMode 2
+	If WinExist("_for reference")
+		WinActivate
+	else
+		Run "d:\Work\In-Progress\Translations\Платинка\ИСПЫТАТЕЛЬНАЯ ЛАБОРАТОРИЯ_for reference.docx"
+		Sleep 3000
+		WinActivate("_for reference")
+	Sleep 150
+	Send "^f"
+	Send "^v"
+	Send "{Enter}"
+}

@@ -80,6 +80,7 @@ CopyTextToObsidian() {
 		WinActivate("_for reference")
 	Sleep 150
 	Send "^f"
+	Sleep 1000
 	Send "^v"
 	Send "{Enter}"
 }

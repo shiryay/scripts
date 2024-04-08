@@ -21,6 +21,7 @@ Search(engine) {
 	urls["Sokr"] := "http://sokr.ru/@@@/"
 	urls["Yandex"] := "https://yandex.ru/search/?text=`%22@@@`%22"
 	urls["CollinsEs"] := "https://www.collinsdictionary.com/dictionary/spanish-english/@@@"
+	urls["Bilexis"] := "https://bilexis.com/collocation/@@@"
 	url := urls[engine]
 	A_Clipboard := ""
 	Send "^c"
@@ -140,6 +141,12 @@ Search(engine) {
 
 !c:: {
 	provider := "CollinsEs"
+	Search(provider)
+	return
+}
+
+!l:: {
+	provider := "Bilexis"
 	Search(provider)
 	return
 }

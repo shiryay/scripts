@@ -84,3 +84,8 @@ CopyTextToObsidian() {
 	Send "^v"
 	Send "{Enter}"
 }
+
+F3:: {
+	Send "+{F3}"
+	return
+}

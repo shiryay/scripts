@@ -72,17 +72,18 @@ CopyTextToObsidian() {
 	Send "^c"
 	ClipWait
 	SetTitleMatchMode 2
-	If WinExist("---for reference---")
+	If WinExist("---for reference---") {
 		WinActivate
-	else
-		Run "d:\Work\In-Progress\Translations\Платинка\ИСПЫТАТЕЛЬНАЯ ЛАБОРАТОРИЯ_for reference.docx"
-		Sleep 3000
-		WinActivate("_for reference")
-	Sleep 150
-	Send "^f"
-	Sleep 1000
-	Send "^v"
-	Send "{Enter}"
+		Sleep 150
+		Send "^f"
+		Sleep 1000
+		Send "^v"
+		Send "{Enter}"
+	}
+	else {
+
+	}
+	return
 }
 
 F3:: {

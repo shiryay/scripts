@@ -27,6 +27,29 @@ CopyTextToObsidian() {
 	return
 }
 
+OpenTg() {
+	SetTitleMatchMode 2
+	If WinExist("Telegram")
+		WinActivate
+	else
+		Run "C:\Users\anon\AppData\Roaming\Telegram Desktop\Telegram.exe"
+		Sleep 3000
+		WinActivate("Telegram")
+	return
+}
+
+CopyTextToTgSaved() {
+	A_Clipboard := ""
+	Send "^c"
+	ClipWait
+	OpenTg
+	Send "^0"
+	Sleep 150
+	Send "^v"
+	Send "{Enter}"
+	return
+}
+
 ; Downloading selected youtube link with savefrom web interface
 ; TODO: think about automating further with pressing download and saving file
 ^!y:: {
@@ -58,12 +81,19 @@ CopyTextToObsidian() {
 	
 ; Sending selected text to an opened Obsidian vault
 !o:: {
-	A_Clipboard := ""
 	CopyTextToObsidian
 }
 
 #o:: {
 	OpenObsidian
+}
+
+^!t:: {
+	OpenTg
+}
+
+^!s:: {
+	CopyTextToTgSaved
 }
 
 ; Temporary function for searching a reference document
@@ -86,6 +116,7 @@ CopyTextToObsidian() {
 	return
 }
 
+; Use F3 for Shift+F3 (change case in word)
 F3:: {
 	Send "+{F3}"
 	return

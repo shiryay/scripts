@@ -88,11 +88,11 @@ CopyTextToTgSaved() {
 	OpenObsidian
 }
 
-^!t:: {
+#t:: {
 	OpenTg
 }
 
-^!s:: {
+^#s:: {
 	CopyTextToTgSaved
 }
 

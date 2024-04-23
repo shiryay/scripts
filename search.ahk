@@ -139,7 +139,7 @@ Search(engine) {
 	return
 }
 
-!c:: {
+^!s:: {
 	provider := "CollinsEs"
 	Search(provider)
 	return

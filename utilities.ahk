@@ -129,3 +129,6 @@ F3:: {
 >^>Up::Send "{Volume_Up}"
 >^>Down::Send "{Volume_Down}"
 >^>M::Send "{Volume_Mute}"
+
+; Use Insert for pasting clipboard
+Insert::Send "^v"

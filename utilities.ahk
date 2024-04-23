@@ -92,7 +92,7 @@ CopyTextToTgSaved() {
 	OpenTg
 }
 
-^#s:: {
+^!s:: {
 	CopyTextToTgSaved
 }
 

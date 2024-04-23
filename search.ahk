@@ -20,7 +20,12 @@ Search(engine) {
 	urls["Wox"] := "https://abkuerzungen.woxikon.de/abkuerzung/@@@.php"
 	urls["Sokr"] := "http://sokr.ru/@@@/"
 	urls["Yandex"] := "https://yandex.ru/search/?text=`%22@@@`%22"
+	urls["CollinsCn"] := "https://www.collinsdictionary.com/dictionary/chinese-english/@@@"
+	urls["CollinsDe"] := "https://www.collinsdictionary.com/dictionary/german-english/@@@"
 	urls["CollinsEs"] := "https://www.collinsdictionary.com/dictionary/spanish-english/@@@"
+	urls["CollinsFr"] := "https://www.collinsdictionary.com/dictionary/french-english/@@@"
+	urls["CollinsIt"] := "https://www.collinsdictionary.com/dictionary/italian-english/@@@"
+	urls["CollinsPt"] := "https://www.collinsdictionary.com/dictionary/portuguese-english/@@@"
 	urls["Bilexis"] := "https://bilexis.com/collocation/@@@"
 	url := urls[engine]
 	A_Clipboard := ""
@@ -139,8 +144,39 @@ Search(engine) {
 	return
 }
 
-^!s:: {
+
+^!c:: {
+	provider := "CollinsCn"
+	Search(provider)
+	return
+}
+
+^!d:: {
+	provider := "CollinsDe"
+	Search(provider)
+	return
+}
+
+^!e:: {
 	provider := "CollinsEs"
+	Search(provider)
+	return
+}
+
+^!f:: {
+	provider := "CollinsFr"
+	Search(provider)
+	return
+}
+
+^!i:: {
+	provider := "CollinsIt"
+	Search(provider)
+	return
+}
+
+^!p:: {
+	provider := "CollinsPt"
 	Search(provider)
 	return
 }

@@ -20,7 +20,6 @@ Search(engine) {
 	urls["Wox"] := "https://abkuerzungen.woxikon.de/abkuerzung/@@@.php"
 	urls["Sokr"] := "http://sokr.ru/@@@/"
 	urls["Yandex"] := "https://yandex.ru/search/?text=`%22@@@`%22"
-	urls["CollinsCn"] := "https://www.collinsdictionary.com/dictionary/chinese-english/@@@"
 	urls["CollinsDe"] := "https://www.collinsdictionary.com/dictionary/german-english/@@@"
 	urls["CollinsEs"] := "https://www.collinsdictionary.com/dictionary/spanish-english/@@@"
 	urls["CollinsFr"] := "https://www.collinsdictionary.com/dictionary/french-english/@@@"
@@ -141,13 +140,6 @@ Search(engine) {
 	else
 		Run "d:\mt\network\multitran.exe"
 		WinActivate("MultiTran")
-	return
-}
-
-
-^!c:: {
-	provider := "CollinsCn"
-	Search(provider)
 	return
 }
 

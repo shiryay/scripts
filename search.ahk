@@ -26,6 +26,7 @@ Search(engine) {
 	urls["CollinsIt"] := "https://www.collinsdictionary.com/dictionary/italian-english/@@@"
 	urls["CollinsPt"] := "https://www.collinsdictionary.com/dictionary/portuguese-english/@@@"
 	urls["Bilexis"] := "https://bilexis.com/collocation/@@@"
+	urls["DeepL"] := "https://www.deepl.com/en/translator#ru/en/@@@"
 	url := urls[engine]
 	A_Clipboard := ""
 	Send "^c"
@@ -175,6 +176,12 @@ Search(engine) {
 
 !l:: {
 	provider := "Bilexis"
+	Search(provider)
+	return
+}
+
+^!l:: {
+	provider := "DeepL"
 	Search(provider)
 	return
 }

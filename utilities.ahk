@@ -63,7 +63,7 @@ CopyTextToTgSaved() {
 }
 
 ; Bookmark a web page to obsidian from the page
-^!l:: {
+^!u:: {
 	A_Clipboard := ""
 	Send "^l"
 	Send "^c"

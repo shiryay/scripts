@@ -130,5 +130,6 @@ F3:: {
 >^>Down::Send "{Volume_Down}"
 >^>M::Send "{Volume_Mute}"
 
-; Use Insert for pasting clipboard
-Insert::Send "^v"
+; Remap copypasting keys
+F1::Send "^c"
+F2::Send "^v"

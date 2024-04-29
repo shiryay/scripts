@@ -140,6 +140,7 @@ Search(engine) {
 		WinActivate
 	else
 		Run "d:\mt\network\multitran.exe"
+		Sleep 1000
 		WinActivate("MultiTran")
 	return
 }

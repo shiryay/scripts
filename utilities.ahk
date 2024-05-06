@@ -57,7 +57,8 @@ CopyTextToTgSaved() {
 	Send "^l"
 	Send "^c"
 	ClipWait
-	url := StrReplace(A_Clipboard, "youtube", "ssyoutube")
+	;url := StrReplace(A_Clipboard, "youtube", "ssyoutube")
+	url := StrReplace(A_Clipboard, "https://www.youtube.com/watch?v=", "https://www.y2mate.com/youtube/")
 	Run url
 	return
 }

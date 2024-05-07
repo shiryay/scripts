@@ -42,7 +42,7 @@ Search(engine) {
 	return
 }
 
-!b:: {
+^!b:: {
 	provider := "GoogleBooks"
 	Search(provider)
 	return
@@ -54,7 +54,7 @@ Search(engine) {
 	return
 }
 
-^!b:: {
+!b:: {
 	provider := "Bing"
 	Search(provider)
 	return

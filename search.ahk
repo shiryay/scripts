@@ -29,10 +29,12 @@ Search(engine) {
 	urls["Bilexis"] := "https://bilexis.com/collocation/@@@"
 	urls["DeepL"] := "https://www.deepl.com/en/translator#ru/en/@@@"
 	url := urls[engine]
+	ClipSaved := A_Clipboard
 	A_Clipboard := ""
 	Send "^c"
 	ClipWait
 	url := StrReplace(url, "@@@", A_Clipboard)
+	A_Clipboard := ClipSaved
 	Run url
 }
 

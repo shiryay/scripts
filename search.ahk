@@ -7,6 +7,7 @@ Search(engine) {
 	urls["Google"]:= "https://www.google.ru/search?q=`%22@@@`%22"
 	urls["GoogleBooks"] := "https://www.google.com/search?tbm=bks&q=`%22@@@`%22"
 	urls["GoogleTr"] := "https://translate.google.ru/?sl=auto&tl=en&text=@@@&op=translate&hl=en"
+	urls["Bing"] := "https://www.bing.com/search?q=%22@@@%22"
 	urls["LingueeDeEn"] := "https://www.linguee.de/deutsch-englisch/search?source=auto&query=`%22@@@`%22"
 	urls["LingueeRuEn"] := "https://www.linguee.ru/russian-english/search?source=auto&query=@@@"
 	urls["LingueeEsEn"] := "https://www.linguee.com/english-spanish/search?source=spanish&query=@@@"
@@ -49,6 +50,12 @@ Search(engine) {
 
 !t:: {
 	provider := "GoogleTr"
+	Search(provider)
+	return
+}
+
+^!b:: {
+	provider := "Bing"
 	Search(provider)
 	return
 }

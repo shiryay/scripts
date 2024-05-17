@@ -134,3 +134,11 @@ F3:: {
 ; Remap copypasting keys
 F1::Send "^c"
 F2::Send "^v"
+
+; Enclose in quotes
+^':: {
+	Send "^c"
+	Send Chr(34)
+	Send "^v"
+	Send Chr(34)
+}

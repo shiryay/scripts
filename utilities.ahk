@@ -142,3 +142,6 @@ F2::Send "^v"
 	Send "^v"
 	Send Chr(34)
 }
+
+; Start Terminal
+^!t::Run "wt.exe"

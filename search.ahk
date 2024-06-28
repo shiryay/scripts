@@ -4,7 +4,7 @@ SetWorkingDir A_ScriptDir
 
 Search(engine) {
 	urls := Map()
-	urls["Google"]:= "https://www.google.ru/search?q=`%22@@@`%22"
+	urls["Google"] := "https://www.google.ru/search?q=`%22@@@`%22"
 	urls["GoogleBooks"] := "https://www.google.com/search?tbm=bks&q=`%22@@@`%22"
 	urls["GoogleTr"] := "https://translate.google.ru/?sl=auto&tl=en&text=@@@&op=translate&hl=en"
 	urls["Bing"] := "https://www.bing.com/search?q=%22@@@%22"
@@ -149,8 +149,7 @@ Search(engine) {
 		WinActivate
 	else
 		Run "d:\mt\network\multitran.exe"
-		Sleep(2000)
-		WinActivate("MultiTran")
+	Sleep(2000)
 	return
 }
 

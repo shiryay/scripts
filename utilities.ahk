@@ -145,3 +145,6 @@ F2::Send "^v"
 
 ; Start Terminal
 ^!t::Run "wt.exe"
+
+; Kill MS Word
+^!w::ProcessClose "winword.exe"

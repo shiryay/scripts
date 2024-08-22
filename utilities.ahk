@@ -8,8 +8,8 @@ OpenObsidian() {
 		WinActivate
 	else
 		Run "C:\Users\anon\AppData\Local\Programs\obsidian\Obsidian.exe"
-		Sleep 3000
-		WinActivate("- Vault -")
+	Sleep 3000
+	WinActivate("- Vault -")
 	Sleep 150
 	Send "^+d"
 	Sleep 150
@@ -32,9 +32,9 @@ OpenTg() {
 	If WinExist("Telegram")
 		WinActivate
 	else
-		Run "C:\Users\anon\AppData\Roaming\Telegram Desktop\Telegram.exe"
-		Sleep 3000
-		WinActivate("Telegram")
+		Run "D:\Users\qrioz\AppData\Roaming\Telegram Desktop\Telegram.exe"
+	Sleep 3000
+	WinActivate("Telegram")
 	return
 }
 
@@ -79,7 +79,7 @@ CopyTextToTgSaved() {
 	Send "link"
 	return
 }
-	
+
 ; Sending selected text to an opened Obsidian vault
 !o:: {
 	CopyTextToObsidian
@@ -93,9 +93,9 @@ CopyTextToTgSaved() {
 	OpenTg
 }
 
-^!s:: {
-	CopyTextToTgSaved
-}
+;^!s:: {
+;	CopyTextToTgSaved
+;}
 
 ; Temporary function for searching a reference document
 ^7:: {
@@ -125,15 +125,15 @@ F3:: {
 
 ; AutoHotkey Media Keys
 ; >^>Space::Send "{Media_Play_Pause}"
->^>Left::Send "{Media_Prev}"
->^>Right::Send "{Media_Next}"
+>^>Left:: Send "{Media_Prev}"
+>^>Right:: Send "{Media_Next}"
 ; >^>Up::Send "{Volume_Up}"
 ; >^>Down::Send "{Volume_Down}"
->^>M::Send "{Volume_Mute}"
+>^>M:: Send "{Volume_Mute}"
 
 ; Remap copypasting keys
-F1::Send "^c"
-F2::Send "^v"
+F1:: Send "^c"
+F2:: Send "^v"
 
 ; Enclose in quotes
 ^':: {
@@ -144,7 +144,10 @@ F2::Send "^v"
 }
 
 ; Start Terminal
-^!t::Run "wt.exe"
+^!t:: Run "cmder"
 
 ; Kill MS Word
-^!w::ProcessClose "winword.exe"
+^!w:: ProcessClose "winword.exe"
+
+; Map layout switching to Right Shift
+RShift:: Send "#{Space}"

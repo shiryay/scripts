@@ -3,5 +3,5 @@ SendMode "Input"
 SetWorkingDir A_ScriptDir
 
 ; Starting individual scripts
-#Include "D:\Users\anon\Scripts\search.ahk"
-#Include "D:\Users\anon\Scripts\utilities.ahk"
+#Include "D:\Scripts\search.ahk"
+#Include "D:\Scripts\utilities.ahk"

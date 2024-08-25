@@ -149,5 +149,3 @@ F2:: Send "^v"
 ; Kill MS Word
 ^!w:: ProcessClose "winword.exe"
 
-; Map layout switching to Right Shift
-RShift:: Send "#{Space}"

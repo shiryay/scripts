@@ -131,10 +131,6 @@ F3:: {
 ; >^>Down::Send "{Volume_Down}"
 >^>M:: Send "{Volume_Mute}"
 
-; Remap copypasting keys
-F1:: Send "^c"
-F2:: Send "^v"
-
 ; Enclose in quotes
 ^':: {
 	Send "^c"

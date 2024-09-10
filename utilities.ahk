@@ -140,8 +140,11 @@ F3:: {
 }
 
 ; Start Terminal
-^!t:: Run "cmder"
+^!t:: Run "wt"
 
 ; Kill MS Word
 ^!w:: ProcessClose "winword.exe"
 
+^-:: {
+	Send "–"
+}

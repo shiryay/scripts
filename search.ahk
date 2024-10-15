@@ -28,6 +28,7 @@ Search(engine) {
 	urls["CollinsPt"] := "https://www.collinsdictionary.com/dictionary/portuguese-english/@@@"
 	urls["Bilexis"] := "https://bilexis.com/collocation/@@@"
 	urls["DeepL"] := "https://www.deepl.com/en/translator#ru/en/@@@"
+	urls["Morfix"] := "https://www.morfix.co.il/en/@@@"
 	url := urls[engine]
 	ClipSaved := A_Clipboard
 	A_Clipboard := ""
@@ -191,6 +192,12 @@ Search(engine) {
 
 ^!l:: {
 	provider := "DeepL"
+	Search(provider)
+	return
+}
+
+!h:: {
+	provider := "Morfix"
 	Search(provider)
 	return
 }

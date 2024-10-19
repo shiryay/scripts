@@ -140,7 +140,7 @@ F3:: {
 }
 
 ; Start Terminal
-^!t:: Run "wt"
+^!t:: Run "wezterm-gui"
 
 ; Kill MS Word
 ^!w:: ProcessClose "winword.exe"

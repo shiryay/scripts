@@ -1,0 +1,1 @@
+D:\Stuff\Backups\Repositories\TranslatorChest\stemmer_venv\Scripts\python.exe stem_gloss.py %1

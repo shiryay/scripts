@@ -57,8 +57,8 @@ CopyTextToTgSaved() {
 	Send "^l"
 	Send "^c"
 	ClipWait
-	;url := StrReplace(A_Clipboard, "youtube", "ssyoutube")
-	url := StrReplace(A_Clipboard, "https://www.youtube.com/watch?v=", "https://www.y2mate.com/youtube/")
+	url := StrReplace(A_Clipboard, "youtube", "ssyoutube")
+	;url := StrReplace(A_Clipboard, "https://www.youtube.com/watch?v=", "https://www.y2mate.com/youtube/")
 	Run url
 	return
 }
@@ -137,6 +137,14 @@ F3:: {
 	Send Chr(34)
 	Send "^v"
 	Send Chr(34)
+}
+
+; Enclose in parens
+^9:: {
+	Send "^c"
+	Send "("
+	Send "^v"
+	Send ")"
 }
 
 ; Start Terminal

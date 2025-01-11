@@ -147,8 +147,13 @@ F3:: {
 	Send ")"
 }
 
-; Start Terminal
-^!t:: Run "wezterm-gui"
+; Enclose in brackets
+![:: {
+	Send "^c"
+	Send "["
+	Send "^v"
+	Send "]"
+}
 
 ; Kill MS Word
 ^!w:: ProcessClose "winword.exe"

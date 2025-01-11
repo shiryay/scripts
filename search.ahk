@@ -51,7 +51,7 @@ Search(engine) {
 	return
 }
 
-!t:: {
+^!t:: {
 	provider := "GoogleTr"
 	Search(provider)
 	return

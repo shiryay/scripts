@@ -161,3 +161,21 @@ F3:: {
 ^-:: {
 	Send "–"
 }
+
+; Open Windows Terminal
+!Enter:: {
+	Run "wt.exe"
+}
+
+ScrollLock:: {
+	if GetKeyState("CapsLock", "T") {
+		SetCapsLockState "Off"
+	} else {
+		SetCapsLockState "On"
+	}
+}
+
+CapsLock:: {
+	Send "{LAlt down}{Shift down}"
+	Send "{LAlt up}{Shift up}"
+}

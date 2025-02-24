@@ -179,3 +179,6 @@ CapsLock:: {
 	Send "{LAlt down}{Shift down}"
 	Send "{LAlt up}{Shift up}"
 }
+
+; Open notepad
+!n::Run "notepad.exe d:\Vault\Scratchpad\scratch.txt"

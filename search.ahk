@@ -129,7 +129,7 @@ Search(engine) {
 	return
 }
 
-!x:: {
+^!x:: {
 	provider := "Wox"
 	Search(provider)
 	return

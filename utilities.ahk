@@ -167,6 +167,11 @@ F3:: {
 	Run "wt.exe"
 }
 
+; Open warp terminal
+!^t:: {
+	Run "d:\Users\unborn\AppData\Local\Programs\Warp\warp.exe"
+}
+
 ScrollLock:: {
 	if GetKeyState("CapsLock", "T") {
 		SetCapsLockState "Off"

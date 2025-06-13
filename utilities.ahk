@@ -185,5 +185,8 @@ CapsLock:: {
 	Send "{LAlt up}{Shift up}"
 }
 
-; Open notepad
-!n::Run "notepad.exe d:\Vault\Scratchpad\scratch.txt"
+; Save text to sticky note
+!n:: {
+	Send "^c"
+	Send "!v"
+}

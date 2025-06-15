@@ -186,7 +186,7 @@ CapsLock:: {
 }
 
 ; Save text to sticky note
-!n:: {
+^!n:: {
 	Send "^c"
 	Send "!v"
 }

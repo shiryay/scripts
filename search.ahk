@@ -82,7 +82,7 @@ Search(engine) {
 	return
 }
 
-!s:: {
+^!s:: {
 	provider := "LingueeEsEn"
 	Search(provider)
 	return
